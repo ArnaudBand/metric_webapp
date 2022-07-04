@@ -1,0 +1,36 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+
+}
+
+.container_country {
+  text-decoration: none;
+  color: #007;
+  border: 0.001rem solid #000;
+  margin: 1rem;
+  padding: 1.5rem;
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  align-items: center;
+}
+
+.input_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: aqua;
+  padding: 1rem 0;
+}
+
+.input_div input {
+  padding: 0.5rem 10rem 0.5rem 1rem;
+  outline: none;
+  border: none;
+}
+
+.leaflet_container {
+  width: 100vw;
+  height: 400px;
+}
