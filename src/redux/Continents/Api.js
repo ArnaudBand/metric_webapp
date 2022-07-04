@@ -1,0 +1,38 @@
+import { API_CONTINENT, GET_CONTNINENT } from '../../data/data';
+
+export const getData = (country) => ({
+  type: GET_CONTNINENT,
+  payload: country,
+});
+
+export const fetchData = () => async (dispatch) => {
+  const res = await fetch(API_CONTINENT);
+  const data = await res.json();
+  const countries = data.map((country) => ({
+    continent: country.continent,
+    name: country.country,
+    flag: country.countryInfo.flag,
+    lat: country.countryInfo.lat,
+    long: country.countryInfo.long,
+    cases: country.cases,
+    death: country.deaths,
+    population: country.population,
+    recovered: country.recovered,
+    tests: country.tests,
+    todayCases: country.todayCases,
+    todayDeath: country.todayDeaths,
+    todayRecovered: country.todayRecovered,
+  }));
+  dispatch(getData(countries));
+};
+
+const reduceData = (state = [], action = {}) => {
+  switch (action.type) {
+    case GET_CONTNINENT:
+      return [...state, ...action.payload];
+    default:
+      return state;
+  }
+};
+
+export default reduceData;
