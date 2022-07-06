@@ -1,0 +1,58 @@
+.container {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  padding: 1rem 0.5rem;
+  background-color: #548ce8;
+}
+
+.container_country {
+  text-decoration: none;
+  color: #007;
+  border: 0.001rem solid #000;
+  margin: 0.25rem;
+  padding: 1rem 0 0.05rem 0.05rem;
+  background: url(../../../public/bueImage.jpg);
+  display: flex;
+  flex-direction: column;
+}
+
+.cases {
+  padding: 2rem 0 0 2rem;
+}
+
+.container_app {
+  width: 100vw;
+}
+
+.input_div {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  background-color: #446cb4;
+  padding: 1rem 0;
+}
+
+.input_div input {
+  padding: 0.5rem 10rem 0.5rem 1rem;
+  outline: none;
+  border: none;
+}
+
+.country_name {
+  color: black;
+  font-weight: 800;
+}
+
+.map {
+  width: 100vw;
+}
+
+.leaflet-container {
+  width: 100vw;
+  height: 400px;
+}
+
+.div_flex p {
+  margin: 0;
+}
