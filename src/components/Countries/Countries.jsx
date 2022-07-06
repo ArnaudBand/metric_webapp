@@ -4,32 +4,27 @@ import { Link } from 'react-router-dom';
 import {
   MapContainer, TileLayer, Marker, Popup,
 } from 'react-leaflet';
+import Header from '../Header/Header';
+import Footer from '../Footer/Footer';
 import './countries.css';
 
 const Countries = () => {
   const countries = useSelector((state) => state.reduceData);
 
   const regionCountry = countries.filter((country) => country.continent === 'Europe');
-  console.log('hello', regionCountry);
 
   const container = regionCountry.map((country) => (
     <Link to={`/Details/${country.name}`} key={country.name} className="container_country">
-      <p className="text">
-        Population:
-        {' '}
-        {country.population}
-      </p>
-      <h3 className="Title_c">
-        Country Name:
-        {' '}
-        {country.name}
-      </h3>
-      <p className="cases">
-        Cases:
-        {' '}
-        {country.cases}
-      </p>
       <img src={country.flag} alt={country.name} width={100} className="country_flag" />
+      <div className="cases">
+        <h3 className="country_name">
+          {country.name}
+        </h3>
+        <p className="case">
+          {country.cases}
+        </p>
+      </div>
+
     </Link>
   ));
   const handleChange = () => {
@@ -50,8 +45,9 @@ const Countries = () => {
 
   return (
     <div className="container_app">
+      <Header />
       <div className="map">
-        <MapContainer className="leaflet_container" center={[51.505, -0.09]} zoom={4} scrollWheelZoom={false}>
+        <MapContainer center={[51.505, -0.09]} zoom={4} scrollWheelZoom={false}>
           <TileLayer
             attribution='&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors'
             url="https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png"
@@ -60,24 +56,24 @@ const Countries = () => {
             // eslint-disable-next-line react/no-array-index-key
             <Marker key={index} position={[country.lat, country.long]}>
               <Popup>
-                <h3 className="Title_c">
-                  Country Name:
-                  {' '}
-                  {country.name}
-                </h3>
-                <img src={country.flag} alt={country.name} width={80} className="country_flag" />
-                <p className="text">
+                <div className="div_flex">
+                  <h3 className="titl_c">
+                    {country.lt}
+                  </h3>
+                  <img src={country.flag} alt={country.name} width={80} className="country_flag" />
+                </div>
+                <p>
                   Population:
                   {' '}
                   {country.population}
                 </p>
-                <p className="cases">
+                <p>
                   Cases:
                   {' '}
                   {country.cases}
                 </p>
                 <p>
-                  Deaths:
+                  Death:
 
                   {country.death}
                 </p>
@@ -93,6 +89,7 @@ const Countries = () => {
       <div className="container">
         {container}
       </div>
+      <Footer />
     </div>
   );
 };
