@@ -10,10 +10,9 @@ import {
 const Details = () => {
   const countries = useSelector((state) => state.reduceData);
   const { country } = useParams();
-  console.log('con', country);
   const filterCountries = countries.filter((country) => country.continent === 'Europe');
   const countryName = filterCountries.filter((item) => item.name === country);
-  console.log('haha', countryName);
+
   return (
     <div className="details">
       <Header />
