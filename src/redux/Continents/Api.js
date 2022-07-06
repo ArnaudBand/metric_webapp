@@ -12,6 +12,7 @@ export const fetchData = () => async (dispatch) => {
     continent: country.continent,
     name: country.country,
     flag: country.countryInfo.flag,
+    lt: country.countryInfo.iso2,
     lat: country.countryInfo.lat,
     long: country.countryInfo.long,
     cases: country.cases,
