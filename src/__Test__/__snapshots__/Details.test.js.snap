@@ -11,7 +11,7 @@ exports[`Render components render HomePage 1`] = `
       className="sc-gsnTZi gvEoOo"
     >
       <div
-        className="sc-dkzDqf fVqwxQ"
+        className="sc-dkzDqf lcPnJk"
       >
         <a
           className="sc-iBkjds hOfEQg"
@@ -52,13 +52,14 @@ exports[`Render components render HomePage 1`] = `
         </h1>
       </div>
       <div
-        className="sc-jSMfEi dUwftj"
+        className="sc-jSMfEi fqDjGN"
       >
         <a
           href="/Map"
           onClick={[Function]}
         >
           <svg
+            className="sc-jqUVSM bDfoRd"
             fill="currentColor"
             height="1em"
             stroke="currentColor"
@@ -131,12 +132,12 @@ exports[`Render components render HomePage 1`] = `
     </nav>
   </header>
   <footer
-    className="sc-jqUVSM fPSWMW"
+    className="sc-kDDrLX gZzmoi"
   >
     ©
      
     <a
-      className="sc-kDDrLX iOKWIw"
+      className="sc-iqcoie iCGAil"
       href="/https://github.com/ArnaudBand/metric_webapp"
       onClick={[Function]}
     >
