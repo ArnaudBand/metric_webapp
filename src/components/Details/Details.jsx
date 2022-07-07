@@ -16,9 +16,8 @@ const Details = () => {
   return (
     <div className="details">
       <Header />
-      {countryName.map((country, index) => (
-        // eslint-disable-next-line react/no-array-index-key
-        <Detail key={index} className="detail">
+      {countryName.map((country) => (
+        <Detail key={country.name} className="detail">
           <TitleCountry>
             {country.name}
           </TitleCountry>
