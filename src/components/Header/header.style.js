@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import { TiArrowBack } from 'react-icons/ti';
 import { FaMicrophone } from 'react-icons/fa';
 import { AiTwotoneSetting } from 'react-icons/ai';
+import { GrMapLocation } from 'react-icons/gr';
 
 export const Head = styled.header`
   padding: 1rem;
@@ -16,7 +17,7 @@ export const Navbar = styled.nav`
 `;
 
 export const LeftSide = styled.div`
-  padding: 0 0 0 1rem;
+  // padding: 0 0 0 1rem;
 `;
 
 export const Center = styled.div`
@@ -31,6 +32,7 @@ export const RightSide = styled.div`
   display: flex;
   justify-content: left;
   align-items: center;
+  padding: 0 2rem 0 0;
 `;
 
 export const Backbar = styled(TiArrowBack)`
@@ -51,6 +53,11 @@ export const Fa = styled(FaMicrophone)`
 `;
 
 export const Ai = styled(AiTwotoneSetting)`
+  margin: 0 0.09rem;
+  font-size: 1.5rem;
+`;
+
+export const Gr = styled(GrMapLocation)`
   margin: 0 0.09rem;
   font-size: 1.5rem;
 `;
