@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { useSelector } from 'react-redux';
 import { Link } from 'react-router-dom';
 import Header from '../Header/Header';
@@ -9,35 +9,19 @@ const Countries = () => {
   const countries = useSelector((state) => state.reduceData);
 
   const regionCountry = countries.filter((country) => country.continent === 'Europe');
-  const container = regionCountry.map((country) => (
-    <Link to={`/Details/${country.name}`} key={country.name} className="container_country">
-      <img src={country.flag} alt={country.name} width={100} className="country_flag" />
-      <div className="cases">
-        <h3 className="country_name">
-          {country.name}
-        </h3>
-        <p className="case">
-          {country.cases}
-        </p>
-      </div>
+  const [state, setState] = useState('');
 
-    </Link>
-  ));
-  const handleChange = () => {
-    let text = '';
-    const input = document.querySelector('#input');
-    const inputCountry = input.value.toUpperCase();
-    const containerCountry = document.querySelectorAll('.container_country');
-    [...containerCountry].forEach((country) => {
-      const cont = country;
-      text = cont.innerText || cont.textContent;
-      if (text.toUpperCase().indexOf(inputCountry) > -1) {
-        cont.style.display = '';
-      } else {
-        cont.style.display = 'none';
+  const arr = [];
+  if (regionCountry.length > 0 && state) {
+    regionCountry.filter((country) => {
+      if (country.name.toLowerCase().includes(state)) {
+        arr.push(country);
       }
+      return arr;
     });
-  };
+  }
+
+  const handleChange = (element) => setState(element.target.value);
 
   return (
     <div className="container_app">
@@ -50,7 +34,31 @@ const Countries = () => {
         <input type="text" id="input" placeholder="Type a country name" onChange={handleChange} />
       </div>
       <div className="container">
-        {container}
+
+        {
+        arr && arr.map((country) => (
+          <Link className="container_country" key={country.name} to={`/Details/${country.name}`}>
+            <img src={country.flag} alt={country.name} width={100} className="country_flag" />
+            <div className="cases">
+              <h1 className="country_name">{country.name}</h1>
+              <p className="case">{country.cases}</p>
+            </div>
+          </Link>
+        ))
+      }
+
+        {
+      arr.length === 0 && regionCountry.map((country) => (
+        <Link className="container_country" key={country.name} to={`/Details/${country.name}`}>
+          <img src={country.flag} alt={country.name} width={100} className="country_flag" />
+          <div className="cases">
+            <h1 className="country_name">{country.name}</h1>
+            <p className="case">{country.cases}</p>
+          </div>
+        </Link>
+      ))
+    }
+
       </div>
       <Footer />
     </div>
