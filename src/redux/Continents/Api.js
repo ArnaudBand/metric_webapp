@@ -1,4 +1,6 @@
-import { API_CONTINENT, GET_CONTNINENT } from '../../data/data';
+const API_CONTINENT = 'https://disease.sh/v3/covid-19/countries';
+
+const GET_CONTNINENT = 'redux/Continents/GET_CONTINENT';
 
 export const getData = (country) => ({
   type: GET_CONTNINENT,
