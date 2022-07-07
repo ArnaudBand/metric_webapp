@@ -1,3 +1,17 @@
+.div_header {
+  width: 100vw;
+}
+
+.div_header .headerImageSc {
+  width: 100%;
+  height: 400px;
+  object-fit: contain;
+}
+
+.div_header .headerImageRes {
+  display: none;
+}
+
 .container {
   display: grid;
   grid-template-columns: repeat(2, 1fr);
@@ -55,4 +69,17 @@
 
 .div_flex p {
   margin: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .div_header .headerImageSc {
+    display: none;
+  }
+
+  .div_header .headerImageRes {
+    display: block;
+    width: 100%;
+    height: 400px;
+    object-fit: contain;
+  }
 }
