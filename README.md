@@ -8,6 +8,14 @@ We will select an API that provides numeric data about a topic that you like and
 one page with a list of items that could be filtered by some parameters; This page should be your homepage.
 one page for the item details;
 
+### Live on: 
+
+[Heroku](https://covid-data-19.herokuapp.com/)
+
+### Video on:
+
+[Click](https://www.loom.com/share/e0ef058b662b405b8a072ec48be2866a)
+
 ## Built With
 
 - React-Redux
@@ -70,9 +78,9 @@ Give a ⭐️ if you like this project!
 
 ### Acknowledgments
 
-Hat tip to anyone whose code was used
-Inspiration
-etc
+- [Microverse](https://www.microverse.org/) to improve my skills
+- Covid_19 [API](https://disease.sh/v3/covid-19/countries)
+- Original design by[Nelson Sakwa in Behance](https://www.behance.net/sakwadesignstudio)
 
 ### 📝 License
 
