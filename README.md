@@ -33,7 +33,7 @@ one page for the item details;
 
 To clone this project :
 
-Run command: git clone `https://github.com/Somdotta07/react-redux-capstone`
+Run command: git clone `https://github.com/ArnaudBand/metric_webapp.git`
 Or press the green Code button in the upper right corner and choose to download from the Download ZIP link.
 
 ### Setup
